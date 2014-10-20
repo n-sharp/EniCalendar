@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniCalendar.Web", "EniHolidayCalendar.Web\EniCalendar.Web.csproj", "{027FE7E6-F4BD-4872-9784-684AA66CFD10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniCalendar.Web.Tests", "EniHolidayCalendar.Web.Tests\EniCalendar.Web.Tests.csproj", "{69C4DDEC-6851-4430-8FE0-61A7199F16EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HolidayCalendar", "HolidayCalendar", "{83E0548C-090A-40D3-AE0D-365B68E49587}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManagement", "UserManagement", "{2AC86244-81E8-4CFB-9C13-AAD8E6796149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedDatabaseManagementTools", "SharedDatabaseManagementTools", "{8FA11EF2-71BD-4BFE-A9B9-2FC5741D38A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernel", "SharedKernel", "{D01A959F-420E-4272-A516-42028586526B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniHolidayCalendar.Core", "EniHolidayCalendar.Core\EniHolidayCalendar.Core.csproj", "{E57369F4-1FDD-4F5C-AC93-2AA16979B3DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniCalendar.SharedKernel", "EniHolidayCalendar.SharedKernel\EniCalendar.SharedKernel.csproj", "{6A5D4D1F-C969-4FE8-B19E-1D2EE359F03C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniCalendar.SharedKernel.UnitTests", "EniHolidayCalendar.SharedKernel.UnitTests\EniCalendar.SharedKernel.UnitTests.csproj", "{EF9518D4-9908-4573-A9F5-73E4D2149108}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4A658FDA-9B84-4317-9EE1-9D21AA423D10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniHolidayCalendar.Data", "EniHolidayCalendar.Data\EniHolidayCalendar.Data.csproj", "{F0010169-0818-4AF4-BD53-C568E4C62378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EniHolidayCalendar.IntergrationTests", "EniHolidayCalendar.IntergrationTests\EniHolidayCalendar.IntergrationTests.csproj", "{EA8E0B50-868C-4925-A1F1-E29A210256CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReleaseItems", "ReleaseItems\ReleaseItems.csproj", "{24541E38-1352-4E54-9AD8-CBA01F0AAFF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{027FE7E6-F4BD-4872-9784-684AA66CFD10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{027FE7E6-F4BD-4872-9784-684AA66CFD10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{027FE7E6-F4BD-4872-9784-684AA66CFD10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{027FE7E6-F4BD-4872-9784-684AA66CFD10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C4DDEC-6851-4430-8FE0-61A7199F16EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C4DDEC-6851-4430-8FE0-61A7199F16EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C4DDEC-6851-4430-8FE0-61A7199F16EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C4DDEC-6851-4430-8FE0-61A7199F16EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E57369F4-1FDD-4F5C-AC93-2AA16979B3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E57369F4-1FDD-4F5C-AC93-2AA16979B3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E57369F4-1FDD-4F5C-AC93-2AA16979B3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E57369F4-1FDD-4F5C-AC93-2AA16979B3DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5D4D1F-C969-4FE8-B19E-1D2EE359F03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5D4D1F-C969-4FE8-B19E-1D2EE359F03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5D4D1F-C969-4FE8-B19E-1D2EE359F03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5D4D1F-C969-4FE8-B19E-1D2EE359F03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9518D4-9908-4573-A9F5-73E4D2149108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9518D4-9908-4573-A9F5-73E4D2149108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9518D4-9908-4573-A9F5-73E4D2149108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9518D4-9908-4573-A9F5-73E4D2149108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0010169-0818-4AF4-BD53-C568E4C62378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0010169-0818-4AF4-BD53-C568E4C62378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0010169-0818-4AF4-BD53-C568E4C62378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0010169-0818-4AF4-BD53-C568E4C62378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8E0B50-868C-4925-A1F1-E29A210256CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8E0B50-868C-4925-A1F1-E29A210256CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8E0B50-868C-4925-A1F1-E29A210256CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8E0B50-868C-4925-A1F1-E29A210256CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24541E38-1352-4E54-9AD8-CBA01F0AAFF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24541E38-1352-4E54-9AD8-CBA01F0AAFF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24541E38-1352-4E54-9AD8-CBA01F0AAFF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24541E38-1352-4E54-9AD8-CBA01F0AAFF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E57369F4-1FDD-4F5C-AC93-2AA16979B3DD} = {83E0548C-090A-40D3-AE0D-365B68E49587}
+		{6A5D4D1F-C969-4FE8-B19E-1D2EE359F03C} = {D01A959F-420E-4272-A516-42028586526B}
+		{EF9518D4-9908-4573-A9F5-73E4D2149108} = {D01A959F-420E-4272-A516-42028586526B}
+		{4A658FDA-9B84-4317-9EE1-9D21AA423D10} = {83E0548C-090A-40D3-AE0D-365B68E49587}
+		{F0010169-0818-4AF4-BD53-C568E4C62378} = {4A658FDA-9B84-4317-9EE1-9D21AA423D10}
+		{EA8E0B50-868C-4925-A1F1-E29A210256CC} = {4A658FDA-9B84-4317-9EE1-9D21AA423D10}
+	EndGlobalSection
+EndGlobal

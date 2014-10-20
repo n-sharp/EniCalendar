@@ -1,0 +1,26 @@
+﻿@model EniHolidayCalendar.Web.Controllers.HomeModel
+@{
+    ViewBag.Title = "ENI Calendar Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                Please select our teams calendar to enter you vacation period.
+            </p>
+        </div>
+    </section>
+}
+<h3>Select a calendar to view:</h3>
+<ol class="round">
+    @foreach (EniHolidayCalendar.Web.Controllers.CalendarModel item in Model.Calendars)
+  {
+      <li>
+        @Html.ActionLink(item.DisplayName, "Index", "Calendar", new { CalendarCode =  item.CalendarCode}, null)
+        </li>
+        }
+</ol>
