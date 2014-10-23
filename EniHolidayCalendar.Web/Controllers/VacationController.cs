@@ -32,7 +32,7 @@ namespace EniHolidayCalendar.Web.Controllers
       //todo retrieve calendarcode from session?
       string pCalendarCode = "trms";
       
-      var lCalendar = mCalendarRepository.GetCalendarForDate(pCalendarCode, Model.Start);
+      var lCalendar = mCalendarRepository.GetCalendarForMonth(pCalendarCode, Model.Start);
 
       var lNewEntry = VacationEntry.Create(new DateTimeRange(Model.Start, Model.EndInclusive.AddDays(1)), Model.Title, Model.Type);
       lCalendar.AddNewEntry(lNewEntry);

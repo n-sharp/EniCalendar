@@ -22,7 +22,7 @@ namespace EniHolidayCalendar.Web.Controllers
     public ActionResult Index(string CalendarCode)
     {
       var lEntries = new List<CalendarEntryModel>();
-      foreach (dynamic pEntry in mRepository.GetCalendarForDate(CalendarCode, DateTime.Now).Entries)
+      foreach (dynamic pEntry in mRepository.GetCalendarForMonth(CalendarCode, DateTime.Now).Entries)
       {
         lEntries.Add(CalendarEntryManager.Display(pEntry));
       }

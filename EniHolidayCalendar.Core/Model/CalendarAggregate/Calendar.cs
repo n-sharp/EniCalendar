@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EniCalendar.SharedKernel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EniHolidayCalendar.Core.Model.CalendarAggregate
 {
-  public class Calendar : Entity<Guid>
+  [Table("Calendars")]
+  public class Calendar : CalendarRoot
   {
-    public string CalendarCode { get; private set; }
-    public DateTimeRange DateRange { get; private set; }
+    //public string CalendarCode { get; private set; }
+    //public string DisplayName { get; private set; }
+    public DateTimeRange DateRange { get; set; }
 
     public List<CalendarEntry> Entries { get; private set; }
 
@@ -20,13 +24,16 @@ namespace EniHolidayCalendar.Core.Model.CalendarAggregate
       Entries = new List<CalendarEntry>();
     }
 
-    public Calendar(Guid pId, string pCalendarCode)
+    //used for initial setup
+    public Calendar(Guid pId, string pCalendarCode, string pDisplayName)
       : base(pId)
     {
       CalendarCode = pCalendarCode;
+      DisplayName = pDisplayName;
       Entries = new List<CalendarEntry>();
     }
 
+    //not used
     public Calendar(Guid pId, DateTimeRange pDateRange, string pCalendarCode, IEnumerable<CalendarEntry> pEntries)
       : base(pId)
     {
@@ -44,12 +51,25 @@ namespace EniHolidayCalendar.Core.Model.CalendarAggregate
         throw new ArgumentException("Cannot add duplicate entry to calendar", "entry");
       }
 
-      pEntry.Calendar = this;
       Entries.Add(pEntry);
 
       //TODO raise HolidayPlannedEvent
 
       return pEntry;
     }
+  }
+
+  [Table("Calendars")]
+  public class CalendarRoot : Entity<Guid>
+  {
+    public string CalendarCode { get; protected set; }
+    public string DisplayName { get; protected set; }
+    
+    protected CalendarRoot()
+      : base(Guid.NewGuid()) //required for EF
+    {      
+    }
+
+    protected CalendarRoot(Guid pId) : base(pId) { }
   }
 }

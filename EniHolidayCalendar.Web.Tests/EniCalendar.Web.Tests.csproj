@@ -41,6 +41,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -131,6 +138,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EniHolidayCalendar.Core\EniHolidayCalendar.Core.csproj">
+      <Project>{e57369f4-1fdd-4f5c-ac93-2aa16979b3dd}</Project>
+      <Name>EniHolidayCalendar.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EniHolidayCalendar.Data\EniHolidayCalendar.Data.csproj">
+      <Project>{f0010169-0818-4af4-bd53-c568e4c62378}</Project>
+      <Name>EniHolidayCalendar.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EniHolidayCalendar.Web\EniCalendar.Web.csproj">
       <Project>{027FE7E6-F4BD-4872-9784-684AA66CFD10}</Project>
       <Name>EniCalendar.Web</Name>

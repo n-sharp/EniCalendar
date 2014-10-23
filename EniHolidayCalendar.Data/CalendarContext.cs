@@ -15,17 +15,16 @@ namespace EniHolidayCalendar.Data
     {
     }
 
+    public DbSet<CalendarRoot> CalendarRoots {get;set;}
     public DbSet<Calendar> Calendars { get; set; }
-    public DbSet<CalendarEntry> Entries { get; set; }
+    //public DbSet<CalendarEntry> Entries { get; set; }
     //public DbSet<VacationType> VacationTypes { get; set; }
     //public DbSet<ApprovalStatus> ApprovalStatus { get; set; }
-    //public DbSet<Employee> Employees { get; set; }
+    public DbSet<Employee> Employees { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
       modelBuilder.Entity<Calendar>().Ignore(c => c.DateRange);
-
-      modelBuilder.Entity<Calendar>().HasMany<CalendarEntry>(r => r.Entries);
 
       base.OnModelCreating(modelBuilder);
     }
@@ -37,8 +36,8 @@ namespace EniHolidayCalendar.Data
     {
       List<Calendar> lCalendars = new List<Calendar>
         {
-            new Calendar(Guid.NewGuid(), "trms"),
-            new Calendar(Guid.NewGuid(), "go")
+            new Calendar(Guid.NewGuid(), "trms", "TRMS Holiday Calendar"),
+            new Calendar(Guid.NewGuid(), "go", "GO Holiday Calendar")
         };
 
       // add data into context and save to db

@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EniHolidayCalendar.Web;
 using EniHolidayCalendar.Web.Controllers;
+using EniHolidayCalendar.Data.Repositories;
+using EniHolidayCalendar.Data;
 
 namespace EniHolidayCalendar.Web.Tests.Controllers
 {
@@ -16,7 +18,7 @@ namespace EniHolidayCalendar.Web.Tests.Controllers
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(new CalendarRepository(new CalendarContext()));
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -29,7 +31,7 @@ namespace EniHolidayCalendar.Web.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(new CalendarRepository(new CalendarContext()));
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -42,7 +44,7 @@ namespace EniHolidayCalendar.Web.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(new CalendarRepository(new CalendarContext()));
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;

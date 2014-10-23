@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using EniHolidayCalendar.Core.Interfaces;
 using EniHolidayCalendar.Core.Model.CalendarAggregate;
 using EniCalendar.SharedKernel;
+using System.Diagnostics;
+using System.Data.Entity;
 
 namespace EniHolidayCalendar.Data.Repositories
 {
@@ -18,24 +20,27 @@ namespace EniHolidayCalendar.Data.Repositories
       mContext = pContext;
     }
 
-    public Calendar GetCalendarForDate(string pCalendarCode, DateTime pDate)
+    public List<CalendarRoot> GetCalendars()
     {
-      var mEntries = mContext.Entries;
-      var lCalendar = mContext.Calendars.First(c => c.CalendarCode == pCalendarCode);
-      var lEntries = lCalendar.Entries.ToList();     
+      return mContext.CalendarRoots.ToList();
+    }
 
-      var lTest = mContext.Entry(lCalendar).State;
-      return new Calendar(lCalendar.Id, DateTimeRange.CreateOneMonthRange(pDate), lCalendar.CalendarCode, lEntries);
+    public Calendar GetCalendarForMonth(string pCalendarCode, DateTime pDate)
+    {
+      //get calendar
+      var lCalendar = mContext.Calendars.FirstOrDefault(c => c.CalendarCode == pCalendarCode);
+      lCalendar.DateRange = DateTimeRange.CreateOneMonthRange(pDate);
+
+      //get entries for that calendar for given month
+      mContext.Entry(lCalendar).Collection(c => c.Entries)
+        .Query()
+        .Where(e => e.Range.Start < lCalendar.DateRange.EndExclusive && e.Range.EndExclusive > lCalendar.DateRange.Start);
+
+      return lCalendar;
     }
 
     public void Update(Calendar pCalendar)
     {
-      foreach (var pEntry in pCalendar.Entries)
-      {
-        //mContext.Entry(pEntry).State = System.Data.EntityState.Added;
-        mContext.Entries.Add(pEntry);
-      }
-
       mContext.SaveChanges();
     }
 

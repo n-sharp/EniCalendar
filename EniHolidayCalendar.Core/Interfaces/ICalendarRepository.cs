@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace EniHolidayCalendar.Core.Interfaces
 {
-    public interface ICalendarRepository
-    {
-        Calendar GetCalendarForDate(string pCalendarCode, DateTime pDate);
-        void Update(Calendar pCalendar);
-    }
+  public interface ICalendarRepository
+  {
+    List<CalendarRoot> GetCalendars();
+    Calendar GetCalendarForMonth(string pCalendarCode, DateTime pDate);
+    void Update(Calendar pCalendar);
+  }
 }
